@@ -1,12 +1,12 @@
 package com.koshkie.koshkieApp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
@@ -16,7 +16,6 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -24,10 +23,10 @@ public class Splash extends AppCompatActivity {
                 Splash.this.startActivity(mainIntent);
                 Splash.this.finish();
             }
-        }, 2000);
+        }, 1500);
     }
 
-    Class getNextActivity() {
+    private Class getNextActivity() {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
         String language = prefs.getString(langPref, "");
@@ -44,6 +43,6 @@ public class Splash extends AppCompatActivity {
         Locale.setDefault(myLocale);
         android.content.res.Configuration config = new android.content.res.Configuration();
         config.locale = myLocale;
-//        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 }
