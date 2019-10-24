@@ -1,2 +1,6 @@
+/*
+ * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ */
+
 include ':app'
 rootProject.name='Koshkie'

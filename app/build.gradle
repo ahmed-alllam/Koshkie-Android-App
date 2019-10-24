@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ */
+
 apply plugin: 'com.android.application'
 
 android {

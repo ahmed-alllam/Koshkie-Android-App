@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  -->
+
 <resources>
     <color name="colorPrimary">#00E8FF</color>
     <color name="colorPrimaryDark">#05A0BB</color>

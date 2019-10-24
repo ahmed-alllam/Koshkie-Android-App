@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ */
+
 package com.koshkie.koshkieApp;
 
 import android.os.Bundle;

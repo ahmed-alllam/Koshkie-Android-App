@@ -1,3 +1,7 @@
+<!--
+  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  -->
+
 <resources>
     <string name="app_name" translatable="false">Koshkie</string>
     <string name="action_settings" translatable="false">Settings</string>
