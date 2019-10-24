@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class TutorialActivity extends AppCompatActivity {
+public class TutorialActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

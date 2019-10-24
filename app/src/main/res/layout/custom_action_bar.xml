@@ -8,12 +8,12 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
         android:text="MENU"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="normal"
-        app:fontFamily="@font/montserrat"
+        android:textStyle="normal|bold"
+        app:fontFamily="@font/advent_pro"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -21,13 +21,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="70dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="75dp"
         android:background="@drawable/search"
         android:elevation="6dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute">
 
         <EditText
             android:id="@+id/editText2"
@@ -37,29 +38,43 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/transparent"
-            android:hint="Search items.."
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:textSize="12sp"
-            android:cursorVisible="false"
+            android:foregroundGravity="center"
+            android:hint="@string/search_items"
             android:inputType="text"
             android:maxLines="1"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#D0FFFFFF"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="16dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="3dp"
+            android:foregroundGravity="center"
             android:src="@drawable/searchicon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/editText2"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@id/editText2"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,6 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
 
 public class ChooseLangActivity extends AppCompatActivity {
 
@@ -42,15 +41,5 @@ public class ChooseLangActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putString(langPref, lang);
         editor.apply();
-
-        changeLang(lang);
-    }
-
-    public void changeLang(String lang) {
-        Locale myLocale = new Locale(lang);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config,getBaseContext().getResources().getDisplayMetrics());
     }
 }

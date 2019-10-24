@@ -8,8 +8,6 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
-
 public class Splash extends AppCompatActivity {
 
     @Override
@@ -33,16 +31,7 @@ public class Splash extends AppCompatActivity {
         if ("".equals(language)) {
             return ChooseLangActivity.class;
         } else {
-            changeLang(language);
             return MainActivity.class;
         }
-    }
-
-    private void changeLang(String lang) {
-        Locale myLocale = new Locale(lang);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
     }
 }
