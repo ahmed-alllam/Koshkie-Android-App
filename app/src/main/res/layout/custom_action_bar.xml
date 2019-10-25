@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="170dp">
+    android:layout_height="170dp"
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/name"
@@ -15,7 +16,7 @@
         android:layout_marginTop="18dp"
         android:text="MENU"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="normal|bold"
         app:fontFamily="@font/advent_pro"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -24,22 +25,24 @@
         tools:ignore="HardcodedText" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="350dp"
-        android:layout_height="27dp"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginTop="85dp"
+        android:layout_marginRight="35dp"
         android:background="@drawable/search"
-        android:elevation="6dp"
+        android:onClick="onActionBarItemSelected"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="RtlHardcoded,UnusedAttribute">
 
         <EditText
             android:id="@+id/editText2"
-            android:layout_width="305dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="6dp"
             android:background="@android:color/transparent"
             android:foregroundGravity="center"
@@ -47,20 +50,24 @@
             android:inputType="text"
             android:maxLines="1"
             android:textColor="#FFFFFF"
-            android:textColorHint="#D0FFFFFF"
-            android:textSize="12dp"
+            android:textColorHint="#FFFFFF"
+            android:textSize="15dp"
+            android:textStyle="italic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill,SpUsage" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="13dp"
-            android:layout_marginTop="3dp"
+            android:layout_height="17dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="3dp"
             android:foregroundGravity="center"
             android:src="@drawable/searchicon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/editText2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -71,6 +78,7 @@
         android:layout_marginRight="9dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:onClick="onActionBarItemSelected"
         tools:ignore="RtlHardcoded">
 
         <TextView
@@ -81,30 +89,34 @@
             android:foregroundGravity="center"
             android:text="@string/cart"
             android:textColor="#FFFFFF"
-            android:textSize="14dp"
+            android:textSize="20dp"
             app:fontFamily="@font/abel"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpUsage" />
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/cart"
             app:layout_constraintLeft_toRightOf="@id/cart"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/navButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="18dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/cart"
         android:onClick="onActionBarItemSelected"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,RtlHardcoded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
