@@ -16,7 +16,7 @@
         android:layout_marginTop="19dp"
         android:text="MENU"
         android:textColor="#FFFFFF"
-        android:textSize="25sp"
+        android:textSize="25dp"
         android:textStyle="normal|bold"
         app:fontFamily="@font/advent_pro"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -57,7 +57,7 @@
             android:paddingStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="Autofill,SpUsage" />
+            tools:ignore="Autofill,RtlSymmetry,SpUsage" />
 
         <ImageView
             android:layout_width="wrap_content"
