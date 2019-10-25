@@ -25,6 +25,7 @@
         tools:ignore="HardcodedText" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_layout"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_marginLeft="16dp"
@@ -53,15 +54,15 @@
             android:textColorHint="#E6FFFFFF"
             android:textSize="15dp"
             android:textStyle="italic"
+            android:paddingStart="5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill,SpUsage" />
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="17dp"
+            android:layout_height="15dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="3dp"
             android:foregroundGravity="center"
             android:src="@drawable/searchicon"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -109,10 +110,10 @@
 
     <ImageButton
         android:id="@+id/navButton"
-        android:layout_width="19dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="23dp"
+        android:layout_width="20dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/transparent"
         android:onClick="onActionBarItemSelected"
         android:scaleType="centerCrop"
@@ -120,5 +121,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <ImageButton
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="8dp"
+        android:background="@android:color/transparent"
+        android:onClick="onActionBarItemSelected"
+        android:scaleType="centerInside"
+        android:src="@drawable/menu_popup"
+        app:layout_constraintBottom_toBottomOf="@+id/search_layout"
+        app:layout_constraintLeft_toRightOf="@id/search_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/search_layout"
+        tools:ignore="RtlHardcoded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
