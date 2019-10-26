@@ -3,8 +3,8 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#00E8FF</color>
-    <color name="colorPrimaryDark">#05A0BB</color>
+    <color name="colorPrimary">#F7BDCE5C</color>
+    <color name="colorPrimaryDark">#F3D543</color>
     <color name="colorPrimaryLight">#66FFFFFF</color>
-    <color name="colorAccent">#B7F5E6</color>
+    <color name="colorAccent">#B7F5CC</color>
 </resources>

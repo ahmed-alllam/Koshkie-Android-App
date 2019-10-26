@@ -6,14 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
-    android:background="@color/colorPrimary">
+    android:layout_height="130dp"
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="23dp"
         android:text="@string/menu"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
@@ -52,6 +52,7 @@
             android:maxLines="1"
             android:textColor="#FFFFFF"
             android:textColorHint="#E6FFFFFF"
+            android:textCursorDrawable="@null"
             android:textSize="15dp"
             android:textStyle="italic"
             android:paddingStart="5dp"
