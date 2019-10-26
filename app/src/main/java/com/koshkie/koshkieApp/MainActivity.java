@@ -5,7 +5,6 @@
 package com.koshkie.koshkieApp;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 @SuppressLint("RtlHardcoded")
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,11 +24,19 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
-        drawerLayout.setScrimColor(Color.TRANSPARENT);
+
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Home"));
+        tabLayout.addTab(tabLayout.newTab().setText("Sport"));
+        tabLayout.addTab(tabLayout.newTab().setText("Movie"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        //1- try to make image button bigger
+        //2- add animation to navigation drawer button
     }
 
     @Override
@@ -69,6 +77,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         if (view.getId() == R.id.navButton) {
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             drawer.openDrawer(Gravity.LEFT);
+        } else {
+            Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
         }
     }
 }
