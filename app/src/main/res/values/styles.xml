@@ -21,4 +21,10 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="AppTheme.TabLayout" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/abel</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
 </resources>

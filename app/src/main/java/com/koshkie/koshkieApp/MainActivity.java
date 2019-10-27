@@ -11,11 +11,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
 
 @SuppressLint("RtlHardcoded")
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,15 +32,33 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ViewPager viewPager = findViewById(R.id.viewpager);
+        ViewPager2 viewPager = findViewById(R.id.viewpager);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), this);
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), getLifecycle(), this);
         viewPager.setAdapter(pagerAdapter);
 
+
         TabLayout tabLayout = findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
 
+        new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+                switch (position) {
+                    case 0:
+                        tab.setIcon(R.drawable.food);
 
+                        tab.setText(getString(R.string.food));
+                        break;
+                    case 1:
+                        tab.setIcon(R.drawable.grocieries);
+                        tab.setText(getString(R.string.grocieries));
+                        break;
+                    case 2:
+                        tab.setIcon(R.drawable.medicines);
+                        tab.setText(getString(R.string.medicines));
+                }
+            }
+        }).attach();
     }
 
     @Override

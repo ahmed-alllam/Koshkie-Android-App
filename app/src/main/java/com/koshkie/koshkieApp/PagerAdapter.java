@@ -9,22 +9,23 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 
-class PagerAdapter extends FragmentStatePagerAdapter {
+class PagerAdapter extends FragmentStateAdapter {
 
     private Context mContext;
 
-    PagerAdapter(FragmentManager fm, Context context) {
-        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+    PagerAdapter(FragmentManager fm, Lifecycle lifecycle, Context context) {
+        super(fm, lifecycle);
         mContext = context;
     }
 
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         switch (position) {
             case 0:
                 return new FoodFragment();
@@ -38,21 +39,22 @@ class PagerAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return 3;
     }
+//
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        switch (position) {
+//            case 0:
+//                return mContext.getString(R.string.food);
+//            case 1:
+//                return mContext.getString(R.string.grocieries);
+//            case 2:
+//                return mContext.getString(R.string.medicines);
+//            default:
+//                return null;
+//        }
+//    }
 
-    @Override
-    public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return mContext.getString(R.string.food);
-            case 1:
-                return mContext.getString(R.string.grocieries);
-            case 2:
-                return mContext.getString(R.string.medicines);
-            default:
-                return null;
-        }
-    }
 }

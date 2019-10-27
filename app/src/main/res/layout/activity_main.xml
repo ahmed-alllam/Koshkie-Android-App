@@ -32,10 +32,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
-                android:layoutDirection="ltr"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tabIndicatorColor="@android:color/white"
                 app:tabIndicatorHeight="6dp"
+                app:tabInlineLabel="true"
+                app:tabTextAppearance="@style/AppTheme.TabLayout"
                 app:tabTextColor="@android:color/white"></com.google.android.material.tabs.TabLayout>
 
         </com.google.android.material.appbar.AppBarLayout>

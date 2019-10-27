@@ -9,7 +9,7 @@
     <string name="search_items">Search items..</string>
     <string name="cart">Cart(0)</string>
     <string name="menu">MENU</string>
-    <string name="food">Food</string>
-    <string name="grocieries">grocieries</string>
-    <string name="medicines">medicines</string>
+    <string name="food">Restaurants</string>
+    <string name="grocieries">Groceries</string>
+    <string name="medicines">Pharmacies</string>
 </resources>
