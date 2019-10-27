@@ -10,7 +10,9 @@
     android:gravity="bottom"
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:elevation="6dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    tools:ignore="UnusedAttribute">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_photo"
