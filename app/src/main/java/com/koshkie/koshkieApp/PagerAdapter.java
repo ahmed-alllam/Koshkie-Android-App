@@ -4,22 +4,21 @@
 
 package com.koshkie.koshkieApp;
 
-import android.content.Context;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Lifecycle;
+import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.koshkie.koshkieApp.ui.Fragments.FoodFragment;
+import com.koshkie.koshkieApp.ui.Fragments.GrocieriesFragment;
+import com.koshkie.koshkieApp.ui.Fragments.MedicinesFragment;
 
-class PagerAdapter extends FragmentStateAdapter {
 
-    private Context mContext;
+public class PagerAdapter extends FragmentStateAdapter {
 
-    PagerAdapter(FragmentManager fm, Lifecycle lifecycle, Context context) {
-        super(fm, lifecycle);
-        mContext = context;
+
+    public PagerAdapter(FragmentActivity activity) {
+        super(activity);
     }
 
 
@@ -42,19 +41,5 @@ class PagerAdapter extends FragmentStateAdapter {
     public int getItemCount() {
         return 3;
     }
-//
-//    @Override
-//    public CharSequence getPageTitle(int position) {
-//        switch (position) {
-//            case 0:
-//                return mContext.getString(R.string.food);
-//            case 1:
-//                return mContext.getString(R.string.grocieries);
-//            case 2:
-//                return mContext.getString(R.string.medicines);
-//            default:
-//                return null;
-//        }
-//    }
 
 }
