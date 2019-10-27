@@ -3,8 +3,7 @@
   -->
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/orders"
             android:title="@string/orders" />
