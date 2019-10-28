@@ -4,13 +4,12 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.viewpager2.widget.ViewPager2;
@@ -22,8 +21,9 @@ import com.koshkie.koshkieApp.PagerAdapter;
 import com.koshkie.koshkieApp.R;
 
 
-@SuppressLint("RtlHardcoded")
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
         NavigationView navigationView = findViewById(R.id.nav_view);
+        drawer = findViewById(R.id.drawer_layout);
         navigationView.setNavigationItemSelectedListener(this);
 
         ViewPager2 viewPager = findViewById(R.id.viewpager);
@@ -64,7 +65,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -72,24 +72,44 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
     }
 
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        switch (id) {
-
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.orders:
+                // TODO: 2019-10-28  intent to start orders activity
+                break;
+            case R.id.offers:
+                // TODO: 2019-10-28  intent to start offers activity
+                break;
+            case R.id.settings:
+                // TODO: 2019-10-28  intent to start settings activity
+                break;
+            case R.id.contact_us:
+                // TODO: 2019-10-28  intent to start contact us activity
+                break;
+            case R.id.terms:
+                // TODO: 2019-10-28  intent to start terms activity
         }
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     public void onActionBarItemSelected(View view) {
-        if (view.getId() == R.id.navButton) {
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
-            drawer.openDrawer(GravityCompat.START);
-        } else {
-            Toast.makeText(this, "hi", Toast.LENGTH_SHORT).show();
+        switch (view.getId()) {
+            case R.id.cart_layout:
+                // TODO: 2019-10-28 intent to start cart activity 
+                break;
+            case R.id.navButton:
+                drawer.openDrawer(GravityCompat.START);
+                break;
+            case R.id.popup:
+                PopupMenu popup = new PopupMenu(MainActivity.this, view);
+                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        return true;
+                    }
+                });
+                popup.show();
         }
     }
 }

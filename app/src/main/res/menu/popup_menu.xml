@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/sort_by">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/by_items"
+                    android:title="@string/items" />
+                <item
+                    android:id="@+id/by_vendor"
+                    android:title="@string/vendors" />
+            </group>
+        </menu>
+    </item>
+</menu>
