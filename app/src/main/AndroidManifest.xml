@@ -16,6 +16,49 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
+            android:name=".ui.Activities.CartActivity"
+            android:label="@string/title_activity_cart">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.TermsActivity"
+            android:label="@string/title_activity_terms">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.ContactusActivity"
+            android:label="@string/title_activity_contact_us">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.OrdersActivity"
+            android:label="@string/title_activity_orders">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.OffersActivity"
+            android:label="@string/title_activity_offers">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ui.Activities.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.Activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.koshkie.koshkieApp.ui.Activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".ui.Activities.TutorialActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar" />

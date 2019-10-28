@@ -6,18 +6,18 @@
     <group>
         <item
             android:id="@+id/orders"
-            android:title="@string/orders" />
+            android:title="@string/title_activity_orders" />
         <item
             android:id="@+id/offers"
-            android:title="@string/offers" />
+            android:title="@string/title_activity_offers" />
         <item
             android:id="@+id/settings"
-            android:title="@string/settings" />
+            android:title="@string/title_activity_settings" />
         <item
             android:id="@+id/contact_us"
-            android:title="@string/contact_us" />
+            android:title="@string/title_activity_contact_us" />
         <item
             android:id="@+id/terms"
-            android:title="@string/terms_and_policies" />
+            android:title="@string/title_activity_terms" />
     </group>
 </menu>

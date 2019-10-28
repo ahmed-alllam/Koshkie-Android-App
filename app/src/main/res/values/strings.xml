@@ -12,12 +12,13 @@
     <string name="food">Food</string>
     <string name="grocieries">Grocery</string>
     <string name="medicines">Medicine</string>
-    <string name="orders">Orders</string>
-    <string name="offers">Offers</string>
-    <string name="settings">Settings</string>
-    <string name="contact_us">Contact us</string>
-    <string name="terms_and_policies">Terms and Policies</string>
+    <string name="title_activity_orders">Orders</string>
+    <string name="title_activity_offers">Offers</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_contact_us">Contact us</string>
+    <string name="title_activity_terms">Terms and Policies</string>
     <string name="sort_by">Sort by</string>
     <string name="items">\t items</string>
     <string name="vendors">\t vendors</string>
+    <string name="title_activity_cart">Shopping Cart</string>
 </resources>

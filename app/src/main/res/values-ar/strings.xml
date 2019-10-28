@@ -10,12 +10,13 @@
     <string name="food">مطاعم</string>
     <string name="grocieries">بقالات</string>
     <string name="medicines">صيدليات</string>
-    <string name="orders">الطلبات</string>
-    <string name="offers">العروض</string>
-    <string name="settings">الإعدادات</string>
-    <string name="contact_us">تواصل معنا</string>
-    <string name="terms_and_policies">الشروط و الأحكام</string>
+    <string name="title_activity_orders">الطلبات</string>
+    <string name="title_activity_offers">العروض</string>
+    <string name="title_activity_settings">الإعدادات</string>
+    <string name="title_activity_contact_us">تواصل معنا</string>
+    <string name="title_activity_terms">الشروط و الأحكام</string>
     <string name="sort_by">ترتيب العناصر حسب</string>
     <string name="items">\t\tالمنتجات</string>
     <string name="vendors">\t\tالبائعين</string>
+    <string name="title_activity_cart">عربه الشراء</string>
 </resources>

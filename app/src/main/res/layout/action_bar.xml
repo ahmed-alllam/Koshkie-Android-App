@@ -96,12 +96,11 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpUsage" />
 
-        <ImageButton
+        <ImageView
             android:layout_width="30dp"
             android:layout_height="0dp"
             android:layout_marginTop="2dp"
             android:src="@drawable/cart"
-            android:background="@android:color/transparent"
             app:layout_constraintStart_toEndOf="@id/cart"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />

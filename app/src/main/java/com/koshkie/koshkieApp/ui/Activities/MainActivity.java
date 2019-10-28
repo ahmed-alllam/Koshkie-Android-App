@@ -4,6 +4,7 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -75,19 +76,24 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.orders:
-                // TODO: 2019-10-28  intent to start orders activity
+                Intent orders_intent = new Intent(this, OrdersActivity.class);
+                startActivity(orders_intent);
                 break;
             case R.id.offers:
-                // TODO: 2019-10-28  intent to start offers activity
+                Intent offers_intent = new Intent(this, OffersActivity.class);
+                startActivity(offers_intent);
                 break;
             case R.id.settings:
-                // TODO: 2019-10-28  intent to start settings activity
+                Intent settings_intent = new Intent(this, SettingsActivity.class);
+                startActivity(settings_intent);
                 break;
             case R.id.contact_us:
-                // TODO: 2019-10-28  intent to start contact us activity
+                Intent contact_intent = new Intent(this, ContactusActivity.class);
+                startActivity(contact_intent);
                 break;
             case R.id.terms:
-                // TODO: 2019-10-28  intent to start terms activity
+                Intent terms_intent = new Intent(this, TermsActivity.class);
+                startActivity(terms_intent);
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -96,7 +102,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     public void onActionBarItemSelected(View view) {
         switch (view.getId()) {
             case R.id.cart_layout:
-                // TODO: 2019-10-28 intent to start cart activity 
+                Intent cart_intent = new Intent(this, CartActivity.class);
+                startActivity(cart_intent);
                 break;
             case R.id.navButton:
                 drawer.openDrawer(GravityCompat.START);
