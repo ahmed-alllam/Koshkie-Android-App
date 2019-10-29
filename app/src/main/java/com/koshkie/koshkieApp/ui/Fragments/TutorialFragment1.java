@@ -17,8 +17,7 @@ import com.koshkie.koshkieApp.R;
 public class TutorialFragment1 extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_tutorial_fragment1, container, false);
     }
 }
