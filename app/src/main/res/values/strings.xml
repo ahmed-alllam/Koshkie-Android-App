@@ -10,8 +10,8 @@
     <string name="cart">Cart(0)</string>
     <string name="menu">MENU</string>
     <string name="food">Food</string>
-    <string name="grocieries">Grocery</string>
-    <string name="medicines">Medicine</string>
+    <string name="grocieries">Groceries</string>
+    <string name="medicines">Medicines</string>
     <string name="title_activity_orders">Orders</string>
     <string name="title_activity_offers">Offers</string>
     <string name="title_activity_settings">Settings</string>
