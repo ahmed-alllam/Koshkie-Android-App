@@ -19,4 +19,5 @@
     <string name="items">\t\tالمنتجات</string>
     <string name="vendors">\t\tالبائعين</string>
     <string name="title_activity_cart">عربه الشراء</string>
+    <string name="get_started">البدأ</string>
 </resources>

@@ -7,26 +7,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:fitsSystemWindows="true"
     tools:context=".ui.Activities.TutorialActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/tutorials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tut"
-        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/next_button"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/get_started"
+        android:elevation="4dp"
         android:onClick="next"
-        android:text="Next"
+        android:text="@string/get_started"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tutorials"
+        tools:ignore="UnusedAttribute" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

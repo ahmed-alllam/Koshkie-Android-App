@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="180"
+        android:endColor="#5BB994"
+        android:startColor="#F7BDB34A"
+        android:type="linear" />
+    <corners android:radius="25dp" />
+</shape>

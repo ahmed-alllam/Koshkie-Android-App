@@ -18,8 +18,13 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.koshkie.koshkieApp.PagerAdapter;
 import com.koshkie.koshkieApp.R;
+import com.koshkie.koshkieApp.ViewPagerAdapter;
+import com.koshkie.koshkieApp.ui.Fragments.FoodFragment;
+import com.koshkie.koshkieApp.ui.Fragments.GrocieriesFragment;
+import com.koshkie.koshkieApp.ui.Fragments.MedicinesFragment;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,8 +43,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         ViewPager2 viewPager = findViewById(R.id.viewpager);
 
-        PagerAdapter pagerAdapter = new PagerAdapter(this);
-        viewPager.setAdapter(pagerAdapter);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+        ArrayList<Class> fragments = new ArrayList<>();
+        fragments.add(FoodFragment.class);
+        fragments.add(GrocieriesFragment.class);
+        fragments.add(MedicinesFragment.class);
+        viewPagerAdapter.setFragmentsList(fragments);
 
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
