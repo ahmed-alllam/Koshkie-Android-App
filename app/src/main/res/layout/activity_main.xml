@@ -34,7 +34,7 @@
                 android:background="@android:color/transparent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tabIndicatorColor="@android:color/white"
-                app:tabIndicatorHeight="6dp"
+                app:tabIndicatorHeight="7dp"
                 app:tabInlineLabel="true"
                 app:tabTextAppearance="@style/AppTheme.TabLayout"
                 app:tabTextColor="@android:color/white">
