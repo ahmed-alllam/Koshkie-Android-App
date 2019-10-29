@@ -15,26 +15,26 @@
         android:id="@+id/tutorials"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="180dp"
+        android:paddingStart="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:paddingEnd="40dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/next_button"
-        android:layout_width="350dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="320dp"
+        android:layout_height="50dp"
         android:background="@drawable/get_started"
-        android:elevation="4dp"
         android:onClick="next"
         android:text="@string/get_started"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tutorials"
-        tools:ignore="UnusedAttribute" />
+        app:layout_constraintTop_toBottomOf="@id/tutorials" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

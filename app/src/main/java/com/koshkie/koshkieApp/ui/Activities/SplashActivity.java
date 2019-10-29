@@ -34,10 +34,11 @@ public class SplashActivity extends AppCompatActivity {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
         String language = prefs.getString(langPref, "");
-        if ("".equals(language)) {
-            return ChooseLangActivity.class;
-        } else {
-            return MainActivity.class;
-        }
+//        if ("".equals(language)) {
+//            return ChooseLangActivity.class;
+//        } else {
+//            return MainActivity.class;
+//        }
+        return ChooseLangActivity.class;
     }
 }

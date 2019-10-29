@@ -26,4 +26,9 @@
         <item name="android:textSize" tools:ignore="SpUsage">14dp</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
+    <style name="tutorialLayout" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+    </style>
+
 </resources>
