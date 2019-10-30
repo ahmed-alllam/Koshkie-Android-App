@@ -7,9 +7,13 @@ package com.koshkie.koshkieApp.ui.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.koshkie.koshkieApp.R;
 import com.koshkie.koshkieApp.ViewPagerAdapter;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment1;
@@ -27,13 +31,32 @@ public class TutorialActivity extends BaseActivity {
         setContentView(R.layout.activity_tutorial);
 
         ViewPager2 viewPager = findViewById(R.id.tutorials);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+
+        ArrayList<Class> fragments = new ArrayList<>();
+        fragments.add(TutorialFragment1.class);
+        fragments.add(TutorialFragment2.class);
+        fragments.add(TutorialFragment3.class);
+
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, fragments);
         viewPager.setAdapter(viewPagerAdapter);
-        ArrayList<Class> fragment = new ArrayList<>();
-        fragment.add(TutorialFragment1.class);
-        fragment.add(TutorialFragment2.class);
-        fragment.add(TutorialFragment3.class);
-        viewPagerAdapter.setFragmentsList(fragment);
+
+
+        TabLayout tabLayout = findViewById(R.id.tabs);
+
+        new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
+            @Override
+            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
+
+            }
+        }).attach();
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            View tab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(i);
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) tab.getLayoutParams();
+            p.setMargins(0, 0, 30, 0);
+            tab.requestLayout();
+        }
 
     }
 

@@ -29,6 +29,6 @@
 
     <style name="tutorialLayout" parent="AppTheme.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
-
 </resources>

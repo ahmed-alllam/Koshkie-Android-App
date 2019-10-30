@@ -22,4 +22,10 @@
     <string name="vendors">\t vendors</string>
     <string name="title_activity_cart">Shopping Cart</string>
     <string name="get_started">Get Started</string>
+    <string name="tutorial1_title">Add items to your Cart</string>
+    <string name="tutorial1_des">You can browse hundreds of Restaurants, Supermarkets and Pharmacies , Add items you want to your Cart , modify them or add special notes to the vendor.</string>
+    <string name="tutorial2_title">Place Your Order</string>
+    <string name="tutorial2_des">Your order will be delivered to your location in minutes , you can track the order , send special notes to the driver and report if there are any problems.</string>
+    <string name="tutorial3_title">Enjoy!</string>
+    <string name="tutorial3_des">You can leave a review to us and collect coupons to use with your next order.</string>
 </resources>

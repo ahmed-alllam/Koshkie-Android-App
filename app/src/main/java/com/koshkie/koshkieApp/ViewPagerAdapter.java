@@ -17,13 +17,10 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     private List<Class> fragments;
 
 
-    public ViewPagerAdapter(FragmentActivity activity) {
+    public ViewPagerAdapter(FragmentActivity activity, List<Class> fragments) {
         super(activity);
-    }
-
-
-    public void setFragmentsList(List<Class> fragments) {
         this.fragments = fragments;
+
     }
 
     @NonNull
@@ -39,6 +36,6 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return fragments.size();
     }
 }

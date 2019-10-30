@@ -43,13 +43,14 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         ViewPager2 viewPager = findViewById(R.id.viewpager);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(viewPagerAdapter);
+
         ArrayList<Class> fragments = new ArrayList<>();
         fragments.add(FoodFragment.class);
         fragments.add(GrocieriesFragment.class);
         fragments.add(MedicinesFragment.class);
-        viewPagerAdapter.setFragmentsList(fragments);
+
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, fragments);
+        viewPager.setAdapter(viewPagerAdapter);
 
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);

@@ -20,4 +20,10 @@
     <string name="vendors">\t\tالبائعين</string>
     <string name="title_activity_cart">عربه الشراء</string>
     <string name="get_started">البدأ</string>
+    <string name="tutorial1_title">اضف المنتجات الي العربه</string>
+    <string name="tutorial1_des">يمكنك الأن تصفح مئات المطاعم و المحلات و الصيدليات ، اضف المنتجات التي تريدها الي عربه الشراء ، يمكنك التعديل عليهم او اضافه طلب خاص للمحل.</string>
+    <string name="tutorial2_title">ضع طلبك الأن</string>
+    <string name="tutorial2_des">سيصل طلبك الي موقعك في خلال دقائق ، يمكنك تتبع طلبك ، ارسال ملاحظه للسائق ، ويمكنك ابلاغنا في حاله تواجد اي مشكله.</string>
+    <string name="tutorial3_title">استمتع بطلبك!</string>
+    <string name="tutorial3_des">يمكنك ترك تقييم لنا و جمع العديد من الكوبونات لاستخدامهم في طلباتك القادمه.</string>
 </resources>
