@@ -63,10 +63,6 @@
             android:noHistory="true"
             android:theme="@style/tutorialLayout" />
         <activity
-            android:name=".ui.Activities.ChooseLangActivity"
-            android:noHistory="true"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ui.Activities.SplashActivity"
             android:noHistory="true"
             android:theme="@style/AppTheme.NoActionBar">

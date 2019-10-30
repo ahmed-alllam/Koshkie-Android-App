@@ -20,10 +20,12 @@ abstract class BaseActivity extends AppCompatActivity {
         String langPref = "Language";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
         String language = prefs.getString(langPref, "");
-        Locale myLocale = new Locale(language);
-        Locale.setDefault(myLocale);
-        android.content.res.Configuration config = new android.content.res.Configuration();
-        config.locale = myLocale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        if (!"".equals(language)) {
+            Locale myLocale = new Locale(language);
+            Locale.setDefault(myLocale);
+            android.content.res.Configuration config = new android.content.res.Configuration();
+            config.setLocale(myLocale);
+            getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        }
     }
 }

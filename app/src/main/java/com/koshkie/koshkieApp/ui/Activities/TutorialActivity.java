@@ -4,7 +4,9 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +31,12 @@ public class TutorialActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
+
+        String isFirst_launch = "is first launch";
+        SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(isFirst_launch, "false");
+        editor.apply();
 
         ViewPager2 viewPager = findViewById(R.id.tutorials);
 
@@ -57,6 +65,7 @@ public class TutorialActivity extends BaseActivity {
             p.setMargins(0, 0, 30, 0);
             tab.requestLayout();
         }
+
 
     }
 

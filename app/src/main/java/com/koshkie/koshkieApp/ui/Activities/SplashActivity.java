@@ -31,14 +31,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private Class getNextActivity() {
-        String langPref = "Language";
+        String isFirst_launch = "is first launch";
         SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-        String language = prefs.getString(langPref, "");
-//        if ("".equals(language)) {
-//            return ChooseLangActivity.class;
-//        } else {
-//            return MainActivity.class;
-//        }
-        return ChooseLangActivity.class;
+        String isFirst = prefs.getString(isFirst_launch, "true");
+        if ("true".equals(isFirst)) {
+            return TutorialActivity.class;
+        }
+        return MainActivity.class;
     }
 }
