@@ -49,7 +49,7 @@
             android:maxLines="1"
             android:padding="3dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#C1FFFFFF"
             android:textCursorDrawable="@null"
             android:textSize="15dp"
             android:textStyle="italic"

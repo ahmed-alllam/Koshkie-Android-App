@@ -61,6 +61,7 @@ public class TutorialActivity extends BaseActivity {
     }
 
     public void next(View view) {
+        view.setClickable(false);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
