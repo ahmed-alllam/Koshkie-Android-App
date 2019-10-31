@@ -8,7 +8,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 
 import java.util.Locale;
 
@@ -41,7 +40,7 @@ public class PreferencesManager {
         editor.apply();
     }
 
-    public static String getDefaultLocale() {
-        return Resources.getSystem().getConfiguration().locale.getLanguage();
+    public static String getDefaultLocale(Activity context) {
+        return context.getBaseContext().getResources().getConfiguration().locale.getLanguage();
     }
 }

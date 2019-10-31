@@ -29,4 +29,5 @@
     <string name="tutorial3_title">Enjoy!</string>
     <string name="tutorial3_des">You can leave a review to us and collect coupons to use with your next order.</string>
     <string name="lang">en</string>
+    <string name="choose_language">Choose a Language</string>
 </resources>

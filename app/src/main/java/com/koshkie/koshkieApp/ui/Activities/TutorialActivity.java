@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -17,6 +18,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.koshkie.koshkieApp.PreferencesManager;
 import com.koshkie.koshkieApp.R;
 import com.koshkie.koshkieApp.ViewPagerAdapter;
+import com.koshkie.koshkieApp.ui.Fragments.LanguageDialog;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment1;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment2;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment3;
@@ -70,7 +72,18 @@ public class TutorialActivity extends BaseActivity {
     }
 
     public void show_popup(View view) {
-        PreferencesManager.changeLocale(this, "ar");
-        startActivity(new Intent(this, this.getClass()));
+//        PreferencesManager.changeLocale(this, "ar");
+//        startActivity(new Intent(this, TutorialActivity.class));
+//        finish();
+        DialogFragment dialog = new LanguageDialog();
+        dialog.show(getSupportFragmentManager(), "ChooseLanguageDialogFragment");
+    }
+
+    public void onLanguageSelected(String lang) {
+        if (!PreferencesManager.getDefaultLocale(this).equals(lang)) {
+            PreferencesManager.changeLocale(this, lang);
+            startActivity(new Intent(this, TutorialActivity.class));
+            finish();
+        }
     }
 }
