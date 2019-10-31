@@ -28,4 +28,5 @@
     <string name="tutorial2_des">Your order will be delivered to your location in minutes , you can track the order , send special notes to the driver and report if there are any problems.</string>
     <string name="tutorial3_title">Enjoy!</string>
     <string name="tutorial3_des">You can leave a review to us and collect coupons to use with your next order.</string>
+    <string name="lang">en</string>
 </resources>

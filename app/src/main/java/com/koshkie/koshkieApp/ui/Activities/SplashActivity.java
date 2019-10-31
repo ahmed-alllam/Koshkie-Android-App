@@ -4,9 +4,7 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -31,12 +29,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private Class getNextActivity() {
-        String isFirst_launch = "is first launch";
-        SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-        String isFirst = prefs.getString(isFirst_launch, "true");
-        if ("true".equals(isFirst)) {
-            return TutorialActivity.class;
-        }
-        return MainActivity.class;
+//        String isFirst = PreferencesManager.getPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "true");
+//        if ("true".equals(isFirst)) {
+//            return TutorialActivity.class;
+//        }
+//        return MainActivity.class;
+
+        return TutorialActivity.class;
     }
 }

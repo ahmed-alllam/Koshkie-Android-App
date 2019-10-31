@@ -26,4 +26,5 @@
     <string name="tutorial2_des">سيصل طلبك الي موقعك في خلال دقائق ، يمكنك تتبع طلبك ، ارسال ملاحظه للسائق ، ويمكنك ابلاغنا في حاله تواجد اي مشكله.</string>
     <string name="tutorial3_title">استمتع بطلبك!</string>
     <string name="tutorial3_des">يمكنك ترك تقييم لنا و جمع العديد من الكوبونات لاستخدامهم في طلباتك القادمه.</string>
+    <string name="lang">العربيه</string>
 </resources>

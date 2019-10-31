@@ -4,9 +4,7 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.koshkie.koshkieApp.PreferencesManager;
 import com.koshkie.koshkieApp.R;
 import com.koshkie.koshkieApp.ViewPagerAdapter;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment1;
@@ -24,7 +23,6 @@ import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment3;
 
 import java.util.ArrayList;
 
-
 public class TutorialActivity extends BaseActivity {
 
     @Override
@@ -32,11 +30,8 @@ public class TutorialActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
-        String isFirst_launch = "is first launch";
-        SharedPreferences prefs = getSharedPreferences("CommonPrefs", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString(isFirst_launch, "false");
-        editor.apply();
+
+        PreferencesManager.setPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "false");
 
         ViewPager2 viewPager = findViewById(R.id.tutorials);
 
@@ -65,14 +60,17 @@ public class TutorialActivity extends BaseActivity {
             p.setMargins(0, 0, 30, 0);
             tab.requestLayout();
         }
-
-
     }
 
-    public void next(View view) {
+    public void launch_main(View view) {
         view.setClickable(false);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    public void show_popup(View view) {
+        PreferencesManager.changeLocale(this, "ar");
+        startActivity(new Intent(this, this.getClass()));
     }
 }
