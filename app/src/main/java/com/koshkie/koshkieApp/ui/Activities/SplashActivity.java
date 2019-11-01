@@ -10,6 +10,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.koshkie.koshkieApp.PreferencesManager;
 import com.koshkie.koshkieApp.R;
 
 public class SplashActivity extends AppCompatActivity {
@@ -29,12 +30,12 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private Class getNextActivity() {
-//        String isFirst = PreferencesManager.getPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "true");
-//        if ("true".equals(isFirst)) {
-//            return TutorialActivity.class;
-//        }
-//        return MainActivity.class;
+        String isFirst = PreferencesManager.getPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "true");
+        if ("true".equals(isFirst)) {
+            return TutorialActivity.class;
+        }
+        return MainActivity.class;
 
-        return TutorialActivity.class;
+//        return TutorialActivity.class;
     }
 }

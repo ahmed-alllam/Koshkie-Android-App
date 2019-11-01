@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
+import com.koshkie.koshkieApp.PreferencesManager;
 import com.koshkie.koshkieApp.R;
 import com.koshkie.koshkieApp.ui.Activities.TutorialActivity;
 
@@ -37,12 +38,10 @@ public class LanguageDialog extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0:
-                                // en
-                                ((TutorialActivity) getActivity()).onLanguageSelected("en");
+                                ((TutorialActivity) getActivity()).onLanguageSelected(PreferencesManager.ENGLISH_LANGUAGE);
                                 break;
                             case 1:
-                                //ar
-                                ((TutorialActivity) getActivity()).onLanguageSelected("ar");
+                                ((TutorialActivity) getActivity()).onLanguageSelected(PreferencesManager.ARABIC_LANGUAGE);
                         }
                     }
                 });
