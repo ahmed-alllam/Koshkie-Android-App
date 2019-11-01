@@ -32,11 +32,12 @@ public class TutorialActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
-
+        //changes the shared preference is first launch to false in order to not launch this activity again
         PreferencesManager.setPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "false");
 
         ViewPager2 viewPager = findViewById(R.id.tutorials);
 
+        //adds tutorial fragments to the view pager adapter
         ArrayList<Class> fragments = new ArrayList<>();
         fragments.add(TutorialFragment1.class);
         fragments.add(TutorialFragment2.class);
@@ -47,6 +48,7 @@ public class TutorialActivity extends BaseActivity {
         viewPager.setAdapter(viewPagerAdapter);
 
 
+        //sets the three points tab layout to the view pager
         TabLayout tabLayout = findViewById(R.id.tabs);
 
         new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -56,6 +58,7 @@ public class TutorialActivity extends BaseActivity {
             }
         }).attach();
 
+        //creates margins between tab in the tab layout
         for (int i = 0; i < tabLayout.getTabCount(); i++) {
             View tab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(i);
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) tab.getLayoutParams();
@@ -65,6 +68,7 @@ public class TutorialActivity extends BaseActivity {
     }
 
     public void launch_main(View view) {
+        //tutorial ended , launch main activity
         view.setClickable(false);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -72,14 +76,13 @@ public class TutorialActivity extends BaseActivity {
     }
 
     public void show_popup(View view) {
-//        PreferencesManager.changeLocale(this, "ar");
-//        startActivity(new Intent(this, TutorialActivity.class));
-//        finish();
+        //show alert dialog for choosing a language
         DialogFragment dialog = new LanguageDialog();
         dialog.show(getSupportFragmentManager(), "ChooseLanguageDialogFragment");
     }
 
     public void onLanguageSelected(String lang) {
+        //if user chooses a different language then recreate the activity
         if (!PreferencesManager.getDefaultLocale(this).equals(lang)) {
             PreferencesManager.changeLocale(this, lang);
             startActivity(new Intent(this, TutorialActivity.class));

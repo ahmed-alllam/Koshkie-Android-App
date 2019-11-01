@@ -14,6 +14,8 @@ abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //checks if user has choosed another language
         String language = PreferencesManager.getPreference(this, PreferencesManager.LANGUAGE_PREFERENCE, "");
         if (!"".equals(language)) {
             PreferencesManager.changeLocale(this, language);

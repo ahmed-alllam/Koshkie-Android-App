@@ -44,6 +44,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         ViewPager2 viewPager = findViewById(R.id.viewpager);
 
 
+        //adds the fragments to the view pager adapter
         ArrayList<Class> fragments = new ArrayList<>();
         fragments.add(FoodFragment.class);
         fragments.add(GrocieriesFragment.class);
@@ -55,6 +56,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
 
+        //sets the tab layout with the view pager
+        //and gives the tabs titles
         new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
@@ -78,6 +81,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @Override
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
+            //closes the navigation drawer on back button pressed
+            //if it's open
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -85,41 +90,54 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        //gets called when any of the navigation drawer items get clicked
         switch (item.getItemId()) {
             case R.id.orders:
+                //launches orders activity
                 Intent orders_intent = new Intent(this, OrdersActivity.class);
                 startActivity(orders_intent);
                 break;
             case R.id.offers:
+                //launches offers activity
                 Intent offers_intent = new Intent(this, OffersActivity.class);
                 startActivity(offers_intent);
                 break;
             case R.id.settings:
+                //launches settings activity
                 Intent settings_intent = new Intent(this, SettingsActivity.class);
                 startActivity(settings_intent);
                 break;
             case R.id.contact_us:
+                //launches contact us activity
                 Intent contact_intent = new Intent(this, ContactusActivity.class);
                 startActivity(contact_intent);
                 break;
             case R.id.terms:
+                //launches terms activity
                 Intent terms_intent = new Intent(this, TermsActivity.class);
                 startActivity(terms_intent);
         }
+        //closes the navigation drawer
+        //after an items has been taped
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     public void onActionBarItemSelected(View view) {
+        //gets called whenever ac action bar item gets clicked
         switch (view.getId()) {
             case R.id.cart_layout:
+                //launches cart activity
                 Intent cart_intent = new Intent(this, CartActivity.class);
                 startActivity(cart_intent);
                 break;
             case R.id.navButton:
+                //opens the navigation drawer
                 drawer.openDrawer(GravityCompat.START);
                 break;
             case R.id.popup:
+                //shows a popup used to choose
+                // between sorting by items or by shops
                 PopupMenu popup = new PopupMenu(MainActivity.this, view);
                 popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {

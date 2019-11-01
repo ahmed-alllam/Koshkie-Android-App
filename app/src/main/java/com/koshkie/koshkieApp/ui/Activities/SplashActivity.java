@@ -19,6 +19,11 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        //keeps the splash activity running for 1500ms
+        // then launch either main activity or tutorial activity
+        // depending on the shared preferences stored
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -30,12 +35,14 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private Class getNextActivity() {
+        //checks if the user has seen the tutorial --
+        // if yes launch main activity
+        // if he hasn't seen it , launch the tutorial activity
+
         String isFirst = PreferencesManager.getPreference(this, PreferencesManager.FIRST_LAUNCH_PREFERENCE, "true");
         if ("true".equals(isFirst)) {
             return TutorialActivity.class;
         }
         return MainActivity.class;
-
-//        return TutorialActivity.class;
     }
 }
