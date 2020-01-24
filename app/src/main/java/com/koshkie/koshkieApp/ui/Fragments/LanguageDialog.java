@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
 package com.koshkie.koshkieApp.ui.Fragments;
@@ -36,13 +36,15 @@ public class LanguageDialog extends DialogFragment {
         builder.setCustomTitle(myMsg)
                 .setItems(R.array.languages, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        String language = "";
                         switch (which) {
                             case 0:
-                                ((TutorialActivity) getActivity()).onLanguageSelected(PreferencesManager.ENGLISH_LANGUAGE);
+                                language = PreferencesManager.ENGLISH_LANGUAGE;
                                 break;
                             case 1:
-                                ((TutorialActivity) getActivity()).onLanguageSelected(PreferencesManager.ARABIC_LANGUAGE);
+                                language = PreferencesManager.ARABIC_LANGUAGE;
                         }
+                        ((TutorialActivity) getActivity()).onLanguageSelected(language);
                     }
                 });
         return builder.create();

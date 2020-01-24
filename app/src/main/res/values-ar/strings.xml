@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  ~ Copyright (c) 2020. Code Written and tested by Ahmed Emad.
   -->
 
 <resources>
@@ -28,4 +28,5 @@
     <string name="tutorial3_des">يمكنك ترك تقييم لنا و جمع العديد من الكوبونات لاستخدامهم في طلباتك القادمه.</string>
     <string name="lang">العربيه</string>
     <string name="choose_language">أختر لغة</string>
+    <string name="no_gps">يتعثر الحصول علي معلومات الموقع من نظام الملاحه، من فضلك قم باعطاء صلاحيات الموقع من الاعدادات. </string>
 </resources>

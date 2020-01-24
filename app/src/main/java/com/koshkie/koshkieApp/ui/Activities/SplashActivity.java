@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
 package com.koshkie.koshkieApp.ui.Activities;
@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        //keeps the splash activity running for 1500ms
+        // keeps the splash activity running for 1500ms
         // then launch either main activity or tutorial activity
         // depending on the shared preferences stored
 

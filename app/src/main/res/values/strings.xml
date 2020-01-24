@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  ~ Copyright (c) 2020. Code Written and tested by Ahmed Emad.
   -->
 
 <resources>
@@ -30,4 +30,5 @@
     <string name="tutorial3_des">You can leave a review to us and collect coupons to use with your next order.</string>
     <string name="lang">en</string>
     <string name="choose_language">Choose a Language</string>
+    <string name="no_gps">Can\'t get GPS location info, please allow gps permissions from setting.</string>
 </resources>

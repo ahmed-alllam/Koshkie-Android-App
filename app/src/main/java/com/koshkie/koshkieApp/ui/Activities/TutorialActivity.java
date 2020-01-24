@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
 package com.koshkie.koshkieApp.ui.Activities;
@@ -54,7 +54,7 @@ public class TutorialActivity extends BaseActivity {
         new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-
+                //tabs won't have names or any styling property, so this func is empty
             }
         }).attach();
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
 package com.koshkie.koshkieApp.ui.Activities;
@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView.setNavigationItemSelectedListener(this);
 
         ViewPager2 viewPager = findViewById(R.id.viewpager);
+        viewPager.setOffscreenPageLimit(3);
 
 
         //adds the fragments to the view pager adapter
