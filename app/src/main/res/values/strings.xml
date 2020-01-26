@@ -31,4 +31,5 @@
     <string name="lang">en</string>
     <string name="choose_language">Choose a Language</string>
     <string name="no_gps">Can\'t get GPS location info, please allow gps permissions from setting.</string>
+    <string name="picture_of_a_shop_brand">Picture of a shop brand</string>
 </resources>

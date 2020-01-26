@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
-package com.koshkie.koshkieApp;
+package com.koshkie.koshkieApp.ui.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -12,12 +12,12 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.List;
 
 
-public class ViewPagerAdapter extends FragmentStateAdapter {
+public class ShopsViewPagerAdapter extends FragmentStateAdapter {
 
     private List<Class> fragments;
 
 
-    public ViewPagerAdapter(FragmentActivity activity, List<Class> fragments) {
+    public ShopsViewPagerAdapter(FragmentActivity activity, List<Class> fragments) {
         super(activity);
         this.fragments = fragments;
 

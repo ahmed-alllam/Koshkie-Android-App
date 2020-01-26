@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+ * Copyright (c) 2020. Code Written and tested by Ahmed Emad.
  */
 
 package com.koshkie.koshkieApp.ui.Fragments;
@@ -9,16 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
 
 import com.koshkie.koshkieApp.R;
 
 
-public class MedicinesFragment extends Fragment {
-
+public class MedicinesFragment extends ShopsBaseFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_medicines, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.fragment_grocieries, container, false);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void getShops() {
+        super.getShops("M");
     }
 }

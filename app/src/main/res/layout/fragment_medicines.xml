@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  ~ Copyright (c) 2020. Code Written and tested by Ahmed Emad.
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -9,11 +9,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.MedicinesFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
     <TextView
+        android:id="@+id/no_gps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/no_gps"
+        android:textAlignment="center"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="17sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Medicines"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toTopOf="@id/recycler_view" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

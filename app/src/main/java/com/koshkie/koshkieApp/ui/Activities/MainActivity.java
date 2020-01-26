@@ -4,25 +4,30 @@
 
 package com.koshkie.koshkieApp.ui.Activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.PopupMenu;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.koshkie.koshkieApp.R;
-import com.koshkie.koshkieApp.ViewPagerAdapter;
+import com.koshkie.koshkieApp.ui.Adapters.ShopsViewPagerAdapter;
 import com.koshkie.koshkieApp.ui.Fragments.FoodFragment;
 import com.koshkie.koshkieApp.ui.Fragments.GrocieriesFragment;
 import com.koshkie.koshkieApp.ui.Fragments.MedicinesFragment;
+import com.koshkie.koshkieApp.ui.Fragments.ShopsBaseFragment;
 
 import java.util.ArrayList;
 
@@ -51,8 +56,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         fragments.add(GrocieriesFragment.class);
         fragments.add(MedicinesFragment.class);
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, fragments);
-        viewPager.setAdapter(viewPagerAdapter);
+        ShopsViewPagerAdapter shopsViewPagerAdapter = new ShopsViewPagerAdapter(this, fragments);
+        viewPager.setAdapter(shopsViewPagerAdapter);
 
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
@@ -77,6 +82,12 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 }
             }
         }).attach();
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        }
     }
 
     @Override
@@ -136,17 +147,19 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 //opens the navigation drawer
                 drawer.openDrawer(GravityCompat.START);
                 break;
-            case R.id.popup:
-                //shows a popup used to choose
-                // between sorting by items or by shops
-                PopupMenu popup = new PopupMenu(MainActivity.this, view);
-                popup.getMenuInflater().inflate(R.menu.popup_menu, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                    public boolean onMenuItemClick(MenuItem item) {
-                        return true;
-                    }
-                });
-                popup.show();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (requestCode == 1) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                for (Fragment f : getSupportFragmentManager().getFragments()) {
+                    f.getView().findViewById(R.id.recycler_view).setVisibility(View.VISIBLE);
+                    f.getView().findViewById(R.id.no_gps).setVisibility(View.GONE);
+                    ((ShopsBaseFragment) f).getShops();
+                }
+            }
         }
     }
 }

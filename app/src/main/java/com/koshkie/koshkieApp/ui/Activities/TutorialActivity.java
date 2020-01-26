@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.koshkie.koshkieApp.PreferencesManager;
 import com.koshkie.koshkieApp.R;
-import com.koshkie.koshkieApp.ViewPagerAdapter;
+import com.koshkie.koshkieApp.ui.Adapters.ShopsViewPagerAdapter;
 import com.koshkie.koshkieApp.ui.Fragments.LanguageDialog;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment1;
 import com.koshkie.koshkieApp.ui.Fragments.TutorialFragment2;
@@ -44,8 +44,8 @@ public class TutorialActivity extends BaseActivity {
         fragments.add(TutorialFragment3.class);
 
 
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this, fragments);
-        viewPager.setAdapter(viewPagerAdapter);
+        ShopsViewPagerAdapter shopsViewPagerAdapter = new ShopsViewPagerAdapter(this, fragments);
+        viewPager.setAdapter(shopsViewPagerAdapter);
 
 
         //sets the three points tab layout to the view pager

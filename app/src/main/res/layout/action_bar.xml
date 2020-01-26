@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  ~ Copyright (c) 2020. Code Written and tested by Ahmed Emad.
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +30,7 @@
         android:layout_height="35dp"
         android:layout_marginStart="27dp"
         android:layout_marginTop="73dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="25dp"
         android:background="@drawable/search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +49,12 @@
             android:maxLines="1"
             android:padding="3dp"
             android:textColor="#FFFFFF"
-            android:textColorHint="#C1FFFFFF"
+            android:textColorHint="#AEFFFFFF"
             android:textCursorDrawable="@null"
-            android:textSize="15dp"
+            android:textSize="16dp"
             android:textStyle="italic"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/search_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="Autofill,SpUsage" />
@@ -76,11 +77,11 @@
         android:id="@+id/cart_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="19dp"
+        android:onClick="onActionBarItemSelected"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="onActionBarItemSelected">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/cart"
@@ -119,21 +120,6 @@
         android:src="@drawable/menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <ImageButton
-        android:id="@+id/popup"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/transparent"
-        android:onClick="onActionBarItemSelected"
-        android:scaleType="centerInside"
-        android:src="@drawable/menu_popup"
-        app:layout_constraintBottom_toBottomOf="@+id/search_layout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/search_layout"
-        app:layout_constraintTop_toTopOf="@+id/search_layout"
         tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

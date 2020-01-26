@@ -29,4 +29,5 @@
     <string name="lang">العربيه</string>
     <string name="choose_language">أختر لغة</string>
     <string name="no_gps">يتعثر الحصول علي معلومات الموقع من نظام الملاحه، من فضلك قم باعطاء صلاحيات الموقع من الاعدادات. </string>
+    <string name="picture_of_a_shop_brand">صوره المطعم</string>
 </resources>
