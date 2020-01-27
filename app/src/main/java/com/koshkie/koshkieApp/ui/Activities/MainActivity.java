@@ -64,22 +64,19 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         //sets the tab layout with the view pager
         //and gives the tabs titles
-        new TabLayoutMediator(tabLayout, viewPager, true, new TabLayoutMediator.TabConfigurationStrategy() {
-            @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                switch (position) {
-                    case 0:
-                        tab.setIcon(R.drawable.food);
-                        tab.setText(R.string.food);
-                        break;
-                    case 1:
-                        tab.setIcon(R.drawable.grocieries);
-                        tab.setText(R.string.grocieries);
-                        break;
-                    case 2:
-                        tab.setIcon(R.drawable.medicines);
-                        tab.setText(R.string.medicines);
-                }
+        new TabLayoutMediator(tabLayout, viewPager, true, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setIcon(R.drawable.food);
+                    tab.setText(R.string.food);
+                    break;
+                case 1:
+                    tab.setIcon(R.drawable.grocieries);
+                    tab.setText(R.string.grocieries);
+                    break;
+                case 2:
+                    tab.setIcon(R.drawable.medicines);
+                    tab.setText(R.string.medicines);
             }
         }).attach();
 

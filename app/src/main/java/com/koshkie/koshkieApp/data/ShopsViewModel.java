@@ -20,6 +20,7 @@ import retrofit2.Response;
 public class ShopsViewModel extends ViewModel {
     public MutableLiveData<List<ShopModel>> shops = new MutableLiveData<>();
     public MutableLiveData<ShopModel> shop = new MutableLiveData<>();
+    public MutableLiveData<String> error = new MutableLiveData<>();
 
     public void retrieveShop(String slug) {
         new ShopsClient().retrieveShop(slug).enqueue(new Callback<ShopModel>() {
@@ -40,14 +41,16 @@ public class ShopsViewModel extends ViewModel {
         new ShopsClient().getShops(longitude, latitude, type).enqueue(new Callback<ShopsResponseModel>() {
             @Override
             public void onResponse(@NonNull Call<ShopsResponseModel> call, @NonNull Response<ShopsResponseModel> response) {
+                if (response.body().getShops().isEmpty()) {
+                    error.setValue("No Shops");
+                }
                 shops.setValue(response.body().getShops());
-                System.out.println(response.body());
-                // check if shops are empty
             }
 
             @Override
             public void onFailure(@NonNull Call<ShopsResponseModel> call, Throwable t) {
-                System.out.println("error" + t.getMessage());
+                error.setValue("No Internet");
+                System.out.println("no internet from vm");
             }
         });
     }

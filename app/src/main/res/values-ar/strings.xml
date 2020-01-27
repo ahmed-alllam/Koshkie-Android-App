@@ -30,4 +30,8 @@
     <string name="choose_language">أختر لغة</string>
     <string name="no_gps">يتعثر الحصول علي معلومات الموقع من نظام الملاحه، من فضلك قم باعطاء صلاحيات الموقع من الاعدادات. </string>
     <string name="picture_of_a_shop_brand">صوره المطعم</string>
+    <string name="no_internet">لا يوجد اتصال بالانترنت ، من فضلك تاكد من ان جهازك متصل</string>
+    <string name="no_food">عفوآ ، لايوجد مطاعم متوفره في منطقتك حاليا</string>
+    <string name="no_grocieries">عفوآ ، لايوجد محلات بقاله متوفره في منطقتك حاليا</string>
+    <string name="no_medicines">عفوآ ، لايوجد صيدليات متوفره في منطقتك حاليا</string>
 </resources>

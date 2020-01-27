@@ -54,7 +54,7 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             ((ShopViewHolder) holder).shopName.setText(shopsList.get(position).getName());
             ((ShopViewHolder) holder).shopRating.setText(shopsList.get(position).getRating()
                     + " (" + shopsList.get(position).getReviews_count() + ") ");
-            // not complete missing photo download
+            // todo: not complete missing photo download
         }
     }
 

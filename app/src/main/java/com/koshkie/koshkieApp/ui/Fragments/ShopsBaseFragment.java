@@ -32,17 +32,21 @@ import java.util.List;
 
 public abstract class ShopsBaseFragment extends Fragment {
     View view;
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-            getShops();
+        if (savedInstanceState == null) {
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                    == PackageManager.PERMISSION_GRANTED) {
+                getShops();
+            } else {
+                view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
+                view.findViewById(R.id.no_gps).setVisibility(View.VISIBLE);
+            }
+            return view;
         } else {
-            view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
-            view.findViewById(R.id.no_gps).setVisibility(View.VISIBLE);
+            // todo :restore state
+            return view;
         }
-        return view;
     }
 
     public abstract void getShops();
@@ -74,6 +78,20 @@ public abstract class ShopsBaseFragment extends Fragment {
                 adapter.setList(postModels);
             }
         });
-    }
 
+        shopsViewModel.error.observe(getViewLifecycleOwner(), new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                if (s.equals("No Shops")) {
+                    System.out.println("no shops");
+                    view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
+                    view.findViewById(R.id.no_shops).setVisibility(View.VISIBLE);
+                } else {
+                    System.out.println("no internet");
+                    view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
+                    view.findViewById(R.id.no_internet).setVisibility(View.VISIBLE);
+                }
+            }
+        });
+    }
 }
