@@ -4,6 +4,8 @@
 
 package com.koshkie.koshkieApp.models;
 
+import java.util.ArrayList;
+
 public class ShopModel {
     private String profile_photo;
     private long phone_number;
@@ -22,6 +24,11 @@ public class ShopModel {
     private String opens_at;
     private String closes_at;
     private boolean has_offers;
+    private ArrayList<String> tags;
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
 
     public String getProfile_photo() {
         return profile_photo;

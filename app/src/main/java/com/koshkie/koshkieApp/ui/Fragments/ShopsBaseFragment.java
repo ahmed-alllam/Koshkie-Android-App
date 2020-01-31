@@ -83,11 +83,9 @@ public abstract class ShopsBaseFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 if (s.equals("No Shops")) {
-                    System.out.println("no shops");
                     view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
                     view.findViewById(R.id.no_shops).setVisibility(View.VISIBLE);
                 } else {
-                    System.out.println("no internet");
                     view.findViewById(R.id.recycler_view).setVisibility(View.GONE);
                     view.findViewById(R.id.no_internet).setVisibility(View.VISIBLE);
                 }

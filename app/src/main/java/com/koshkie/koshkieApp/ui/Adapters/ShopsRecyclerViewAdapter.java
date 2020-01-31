@@ -60,19 +60,33 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (VIEW_TYPE_SHOP == getItemViewType(position)) {
-            ((ShopViewHolder) holder).shopName.setText(shopsList.get(position).getName());
-            ((ShopViewHolder) holder).shopRating.setRating((float) shopsList.get(position).getRating());
-            ((ShopViewHolder) holder).shopRatingCount.setText("(" +
+            ShopViewHolder ShopView = (ShopViewHolder) holder;
+
+            ShopView.shopName.setText(shopsList.get(position).getName());
+
+            ShopView.shopRating.setRating((float) shopsList.get(position).getRating());
+
+            ShopView.shopRatingCount.setText("(" +
                     shopsList.get(position).getReviews_count() + ")");
-            ((ShopViewHolder) holder).shopVat.setText(shopsList.get(position).getVat() + "%");
-            ((ShopViewHolder) holder).shopMinCharge.setText(shopsList.get(position).getMinimum_charge()
+
+            ShopView.shopVat.setText(shopsList.get(position).getVat() + "%");
+
+            ShopView.shopMinCharge.setText(shopsList.get(position).getMinimum_charge()
                     + " " + shopsList.get(position).getCurrency());
-            ((ShopViewHolder) holder).shopDeliveryFee.setText(shopsList.get(position).getDelivery_fee()
+
+            ShopView.shopDeliveryFee.setText(shopsList.get(position).getDelivery_fee()
                     + " " + shopsList.get(position).getCurrency());
+
+            ShopView.shopTags.setText(listToString(shopsList.get(position).getTags()));
+
+            if (shopsList.get(position).isHas_offers()) {
+                ShopView.hasOffers.setVisibility(View.VISIBLE);
+                ShopView.view.setVisibility(View.VISIBLE);
+            }
 
             Glide.with(context)
                     .load(ShopsClient.BASE_URL + shopsList.get(position).getProfile_photo())
-                    .into(((ShopViewHolder) holder).shopPhoto);
+                    .into(ShopView.shopPhoto);
         }
     }
 
@@ -91,6 +105,17 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         notifyDataSetChanged();
     }
 
+    private String listToString(List<String> list) {
+        StringBuilder result = new StringBuilder();
+        for (String s : list) {
+            if (list.indexOf(s) != 0) {
+                result.append(", ");
+            }
+            result.append(s);
+        }
+        return result.toString();
+    }
+
     private class EmptyViewHolder extends RecyclerView.ViewHolder {
         private EmptyViewHolder(View v) {
             super(v);
@@ -98,9 +123,11 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     class ShopViewHolder extends RecyclerView.ViewHolder {
-        TextView shopName, shopRatingCount, shopVat, shopMinCharge, shopDeliveryFee;
+        TextView shopName, shopRatingCount, shopVat,
+                shopMinCharge, shopDeliveryFee, hasOffers, shopTags;
         ImageView shopPhoto;
         RatingBar shopRating;
+        View view;
 
         ShopViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -111,6 +138,9 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             shopVat = itemView.findViewById(R.id.shopVat);
             shopMinCharge = itemView.findViewById(R.id.shopMinCharge);
             shopDeliveryFee = itemView.findViewById(R.id.shopDeliveryFee);
+            hasOffers = itemView.findViewById(R.id.hasOffers);
+            view = itemView.findViewById(R.id.view);
+            shopTags = itemView.findViewById(R.id.shopTags);
         }
     }
 }

@@ -39,4 +39,5 @@
     <string name="vat">VAT:</string>
     <string name="minCharge">Min.:</string>
     <string name="delivery">Delivery:</string>
+    <string name="has_offers">Special offers on menu items</string>
 </resources>

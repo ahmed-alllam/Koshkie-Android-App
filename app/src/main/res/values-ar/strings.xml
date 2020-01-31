@@ -35,6 +35,7 @@
     <string name="no_grocieries">عفوآ ، لايوجد محلات بقاله متوفره في منطقتك حاليا</string>
     <string name="no_medicines">عفوآ ، لايوجد صيدليات متوفره في منطقتك حاليا</string>
     <string name="vat">ضريبه:</string>
-    <string name="minCharge">حدأدنى:</string>
+    <string name="minCharge">حد أدنى:</string>
     <string name="delivery">توصيل:</string>
+    <string name="has_offers">عروض مميزه علي قائمة المطعم</string>
 </resources>
