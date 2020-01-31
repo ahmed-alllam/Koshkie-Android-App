@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright (c) 2019. Code Written and tested by Ahmed Emad.
+  ~ Copyright (c) 2020. Code Written and tested by Ahmed Emad.
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -30,5 +30,10 @@
     <style name="tutorialLayout" parent="AppTheme.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="android:windowTranslucentStatus">false</item>
+    </style>
+
+    <style name="RatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="colorControlNormal">#BDBDBD</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 </resources>

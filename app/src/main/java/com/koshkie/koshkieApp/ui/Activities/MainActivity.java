@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         viewPager.setOffscreenPageLimit(3);
 
 
-        //adds the fragments to the view pager adapter
+        // adds the fragments to the view pager adapter
         ArrayList<Class> fragments = new ArrayList<>();
         fragments.add(FoodFragment.class);
         fragments.add(GrocieriesFragment.class);

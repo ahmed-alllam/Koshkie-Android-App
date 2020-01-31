@@ -4,9 +4,11 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="7dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,9 +16,10 @@
 
         <ImageView
             android:id="@+id/shopPhoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
             android:contentDescription="@string/picture_of_a_shop_brand"
             android:scaleType="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -26,20 +29,104 @@
             android:id="@+id/shopName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
             android:textSize="20sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/shopPhoto"
+            app:layout_constraintTop_toTopOf="@id/shopPhoto"
             app:layout_constraintStart_toEndOf="@id/shopPhoto" />
 
-        <TextView
+        <RatingBar
             android:id="@+id/shopRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="116dp"
-            android:layout_marginTop="20dp"
-            android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/shopPhoto"
-            app:layout_constraintTop_toBottomOf="@+id/shopName" />
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="50dp"
+            android:isIndicator="true"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:theme="@style/RatingBar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/shopRatingCount"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="250dp"
+            android:layout_marginBottom="60dp"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopVat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shopVatLabel"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopVatLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vat"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/shopName"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopMinCharge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shopMinChargeLabel"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopMinChargeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/minCharge"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shopVat"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopDeliveryFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shopDeliveryFeeLabel"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/shopDeliveryFeeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/delivery"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/shopMinCharge"
+            app:layout_constraintTop_toBottomOf="@id/shopRating"
+            tools:ignore="SpUsage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

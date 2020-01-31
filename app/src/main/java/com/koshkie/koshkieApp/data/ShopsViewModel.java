@@ -31,8 +31,7 @@ public class ShopsViewModel extends ViewModel {
 
             @Override
             public void onFailure(@NonNull Call<ShopModel> call, @NonNull Throwable t) {
-                System.out.println("error");
-                // not complete
+                error.setValue("No Internet");
             }
         });
     }
@@ -50,7 +49,6 @@ public class ShopsViewModel extends ViewModel {
             @Override
             public void onFailure(@NonNull Call<ShopsResponseModel> call, Throwable t) {
                 error.setValue("No Internet");
-                System.out.println("no internet from vm");
             }
         });
     }
@@ -60,12 +58,14 @@ public class ShopsViewModel extends ViewModel {
             @Override
             public void onResponse(@NonNull Call<ShopsResponseModel> call, @NonNull Response<ShopsResponseModel> response) {
                 shops.setValue(response.body().getShops());
+                if (response.body().getShops().isEmpty()) {
+                    error.setValue("No Shops");
+                }
             }
 
             @Override
             public void onFailure(@NonNull Call<ShopsResponseModel> call, @NonNull Throwable t) {
-                System.out.println("error");
-                // not complete
+                error.setValue("No Internet");
             }
         });
     }

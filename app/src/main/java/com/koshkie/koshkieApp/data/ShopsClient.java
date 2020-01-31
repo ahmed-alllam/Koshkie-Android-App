@@ -11,8 +11,8 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-class ShopsClient {
-    private static final String BASE_URL = "http://10.0.2.2/";
+public class ShopsClient {
+    public static final String BASE_URL = "http://10.0.2.2";
     private ShopInterface shopInterface;
 
     ShopsClient() {

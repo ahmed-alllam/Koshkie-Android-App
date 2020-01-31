@@ -45,6 +45,7 @@ public abstract class ShopsBaseFragment extends Fragment {
             return view;
         } else {
             // todo :restore state
+            // todo : add swipe refresh and pagignation
             return view;
         }
     }
@@ -54,15 +55,12 @@ public abstract class ShopsBaseFragment extends Fragment {
     @SuppressLint("MissingPermission")
     void getShops(String type) {
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        final ShopsRecyclerViewAdapter adapter = new ShopsRecyclerViewAdapter();
+        final ShopsRecyclerViewAdapter adapter = new ShopsRecyclerViewAdapter(getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         recyclerView.setAdapter(adapter);
 
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
-
-        ShopsViewModel shopsViewModel = new ViewModelProvider(this).get(ShopsViewModel.class);
 
         double longitude = 0.0;
         double latitude = 0.0;
@@ -70,6 +68,8 @@ public abstract class ShopsBaseFragment extends Fragment {
             longitude = location.getLongitude();
             latitude = location.getLatitude();
         }
+
+        ShopsViewModel shopsViewModel = new ViewModelProvider(this).get(ShopsViewModel.class);
         shopsViewModel.getShops(longitude, latitude, type);
 
         shopsViewModel.shops.observe(getViewLifecycleOwner(), new Observer<List<ShopModel>>() {
