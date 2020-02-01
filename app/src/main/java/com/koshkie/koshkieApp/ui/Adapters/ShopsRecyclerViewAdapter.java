@@ -69,7 +69,7 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             ShopView.shopRatingCount.setText("(" +
                     shopsList.get(position).getReviews_count() + ")");
 
-            ShopView.shopVat.setText(shopsList.get(position).getVat() + "%");
+            ShopView.shopTime.setText(put_time_to_prepare(shopsList.get(position).getTime_to_prepare()));
 
             ShopView.shopMinCharge.setText(shopsList.get(position).getMinimum_charge()
                     + " " + shopsList.get(position).getCurrency());
@@ -87,6 +87,9 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             Glide.with(context)
                     .load(ShopsClient.BASE_URL + shopsList.get(position).getProfile_photo())
                     .into(ShopView.shopPhoto);
+            Glide.with(context)
+                    .load(ShopsClient.BASE_URL + shopsList.get(position).getCover_photo())
+                    .into(ShopView.shopCover);                                                      
         }
     }
 
@@ -109,11 +112,15 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         StringBuilder result = new StringBuilder();
         for (String s : list) {
             if (list.indexOf(s) != 0) {
-                result.append(", ");
+                result.append(" · ");
             }
             result.append(s);
         }
         return result.toString();
+    }
+
+    private String put_time_to_prepare(int time) {
+        return (time - 5) + "-" + (time + 5);
     }
 
     private class EmptyViewHolder extends RecyclerView.ViewHolder {
@@ -123,19 +130,20 @@ public class ShopsRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     class ShopViewHolder extends RecyclerView.ViewHolder {
-        TextView shopName, shopRatingCount, shopVat,
+        TextView shopName, shopRatingCount, shopTime,
                 shopMinCharge, shopDeliveryFee, hasOffers, shopTags;
-        ImageView shopPhoto;
+        ImageView shopPhoto, shopCover;
         RatingBar shopRating;
         View view;
 
         ShopViewHolder(@NonNull View itemView) {
             super(itemView);
             shopPhoto = itemView.findViewById(R.id.shopPhoto);
+            shopCover = itemView.findViewById(R.id.shopCover);
             shopName = itemView.findViewById(R.id.shopName);
             shopRating = itemView.findViewById(R.id.shopRating);
             shopRatingCount = itemView.findViewById(R.id.shopRatingCount);
-            shopVat = itemView.findViewById(R.id.shopVat);
+            shopTime = itemView.findViewById(R.id.shopTime);
             shopMinCharge = itemView.findViewById(R.id.shopMinCharge);
             shopDeliveryFee = itemView.findViewById(R.id.shopDeliveryFee);
             hasOffers = itemView.findViewById(R.id.hasOffers);

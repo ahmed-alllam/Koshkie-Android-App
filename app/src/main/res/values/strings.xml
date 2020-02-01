@@ -36,7 +36,7 @@
     <string name="no_food">There are no available restaurants currently in your area</string>
     <string name="no_grocieries">There are no available grocieries shops currently in your area</string>
     <string name="no_medicines">There are no available pharmacies currently in your area</string>
-    <string name="vat">VAT:</string>
+    <string name="time_to_prepare">mins</string>
     <string name="minCharge">Min.:</string>
     <string name="delivery">Delivery:</string>
     <string name="has_offers">Special offers on menu items</string>

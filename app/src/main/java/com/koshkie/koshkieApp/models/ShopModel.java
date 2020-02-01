@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class ShopModel {
     private String profile_photo;
+    private String cover_photo;
     private long phone_number;
     private String description;
     private String shop_type;
@@ -20,6 +21,7 @@ public class ShopModel {
     private String currency;
     private float minimum_charge;
     private float delivery_fee;
+    private int time_to_prepare;
     private float vat;
     private String opens_at;
     private String closes_at;
@@ -28,6 +30,14 @@ public class ShopModel {
 
     public ArrayList<String> getTags() {
         return tags;
+    }
+
+    public String getCover_photo() {
+        return cover_photo;
+    }
+
+    public int getTime_to_prepare() {
+        return time_to_prepare;
     }
 
     public String getProfile_photo() {
