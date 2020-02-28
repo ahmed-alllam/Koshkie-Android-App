@@ -1,6 +1,6 @@
 # Introduction
 
-This an android App built on to of my backend 
+This an android App built on top of my backend 
 rest api see here : https://github.com/ahmedemad3965/Koshkie-Server
 
 This app is not finished yet but will be completed soon!
