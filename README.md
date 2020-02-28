@@ -1,7 +1,8 @@
 # Introduction
 
-This an android App built on top of my backend 
-rest api see here : https://github.com/ahmedemad3965/Koshkie-Server
+This an android App built on top of my backend
+rest api for food, groceries and medicines delivery service Koshkie
+see here : https://github.com/ahmedemad3965/Koshkie-Server
 
 This app is not finished yet but will be completed soon!
 
